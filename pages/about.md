@@ -14,10 +14,10 @@ credits: true
 
 ## About the Collection
 
-This site is generated using [CollectionBuilder-GH](https://collectionbuilding.github.io/gh/), a project to create a free and simple digital collection using [GitHub Pages](https://pages.github.com/) from: 
+This is a demo collection to practice using CB-GH. I hope to learn how:
 
-- a CSV of collection metadata
-- a folder of JPG images or PDF documents
+- To use markdown
+- To use github web UI
 
 The template repository features four objects from the University of Idaho Library's [Digital Collections](https://www.lib.uidaho.edu/digital). 
 
