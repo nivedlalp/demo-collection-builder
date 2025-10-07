@@ -1,21 +1,11 @@
-id,title,collection,subject,format,type,description
-phones,Phones,Products,Phones,Device,Category,Category placeholder for phones
-iphone_14,Apple iPhone 14,Phones,Smartphones,Device,Product,Latest Apple smartphone with A15 chip
-routers,Routers,Products,Routers,Device,Category,Category placeholder for routers
-netgear_nighthawk,Netgear Nighthawk Router,Routers,WiFi Router,Device,Product,High-speed dual-band wireless router
-computers,Computers,Products,Computers,Device,Category,Category placeholder for computers
-dell_xps_15,Dell XPS 15,Laptops,Computers,Device,Product,Powerful laptop with 15-inch display
-switches,Switches,Products,Switches,Device,Category,Category placeholder for switches
-zigbee_touch_switch,Zigbee Touch Switch,Switches,Touch Switch,Device,Product,Zigbee-enabled smart touch switch
-sensors,Sensors,Products,Sensors,Device,Category,Category placeholder for sensors
-zigbee_motion_sensor,Zigbee Motion Sensor,Sensors,Motion,Sensor,Product,Smart sensor detecting motion events
-fans,Fans,Products,Fans,Device,Category,Category placeholder for fans
-ceiling_fan_modern,Modern Ceiling Fan,Fans,Ceiling Fan,Appliance,Product,Remote-controlled modern ceiling fan
-displays,Displays,Products,Displays,Device,Category,Category placeholder for displays
-samsung_tab_s8,Samsung Galaxy Tab S8,Tablets,Displays,Device,Product,High-end Android tablet for productivity
-lights,Lights,Products,Lights,Device,Category,Category placeholder for lights
-led_tubelight_18w,18W LED Tubelight,Lights,Tubelights,Light,Product,Energy-saving LED tubelight
-cameras,Cameras,Products,Cameras,Device,Category,Category placeholder for cameras
-ring_doorbell,Ring Video Doorbell,Cameras,Doorbell,Camera,Product,Smart doorbell with video and motion detection
-appliances,Appliances / Devices,Products,Appliances,Device,Category,Category placeholder for appliances
-smart_kettle_1l,Smart Kettle 1L,Appliances,Kettle,Appliance,Product,WiFi-enabled electric kettle with scheduling
+objectid,filename,title,collection,subject,format,type,description
+iphone_14,iphone_14.jpg,Apple iPhone 14,Phones,Smartphones,Device,Product,Latest Apple smartphone with A15 chip
+netgear_nighthawk,netgear_nighthawk.jpg,Netgear Nighthawk Router,Routers,WiFi Router,Device,Product,High-speed dual-band wireless router
+dell_xps_15,dell_xps_15.jpg,Dell XPS 15,Computers,Computers,Device,Product,Powerful laptop with 15-inch display
+zigbee_touch_switch,zigbee_touch_switch.jpg,Zigbee Touch Switch,Switches,Touch Switch,Device,Product,Zigbee-enabled smart touch switch
+zigbee_motion_sensor,zigbee_motion_sensor.jpg,Zigbee Motion Sensor,Sensors,Motion,Sensor,Product,Smart sensor detecting motion events
+ceiling_fan_modern,ceiling_fan_modern.jpg,Modern Ceiling Fan,Fans,Ceiling Fan,Appliance,Product,Remote-controlled modern ceiling fan
+samsung_tab_s8,samsung_tab_s8.jpg,Samsung Galaxy Tab S8,Displays,Tablets,Device,Product,High-end Android tablet for productivity
+led_tubelight_18w,led_tubelight_18w.jpg,18W LED Tubelight,Lights,Tubelights,Light,Product,Energy-saving LED tubelight
+ring_doorbell,ring_doorbell.jpg,Ring Video Doorbell,Cameras,Doorbell,Camera,Product,Smart doorbell with video and motion detection
+smart_kettle_1l,smart_kettle_1l.jpg,Smart Kettle 1L,Appliances,Kettle,Appliance,Product,WiFi-enabled electric kettle with scheduling
