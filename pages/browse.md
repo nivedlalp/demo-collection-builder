@@ -1,9 +1,9 @@
 ---
-title: Browse
+title: Browse Products
 layout: browse
-permalink: /browse.html
-# see _data/config-browse.csv for display options
-# the Browse visualization will be added below the content in this file
+permalink: /browse/
+metadata: products
+filter_field: type
+filter_value: Product
 ---
-
-## Browse Items
+## Browse Products
