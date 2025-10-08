@@ -41,6 +41,14 @@ features:
   items: true
 
 display_fields: ["title", "collection", "subject", "format", "description"]
+
+nav:
+  - title: "Home"
+    url: /
+  - title: "Browse"
+    url: /browse/
+  - title: "About"
+    url: /about/
 ##########
 # Site/Organization Branding 
 #   Uncomment these and enter information for your organization (replacing the CDIL links and name below) if you'd like to brand your site with a logo
