@@ -49,6 +49,9 @@ nav:
     url: /browse/
   - title: "About"
     url: /about/
+
+url: "https://nivedlalp.github.io"
+baseurl: "/demo-collection-builder"
 ##########
 # Site/Organization Branding 
 #   Uncomment these and enter information for your organization (replacing the CDIL links and name below) if you'd like to brand your site with a logo
