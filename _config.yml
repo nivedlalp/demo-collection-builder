@@ -52,6 +52,7 @@ nav:
 
 url: "https://nivedlalp.github.io"
 baseurl: "/demo-collection-builder"
+permalink: pretty
 ##########
 # Site/Organization Branding 
 #   Uncomment these and enter information for your organization (replacing the CDIL links and name below) if you'd like to brand your site with a logo
