@@ -1,11 +1,12 @@
-objectid,object_location,title,collection,subject,format,type,description,link
-iphone_14,objects/iphone_14.jpg,Apple iPhone 14,Phones,Smartphones,Device,Product,Latest Apple smartphone with A15 chip,https://www.apple.com/in/iphone-14/
-netgear_nighthawk,objects/netgear_nighthawk.jpg,Netgear Nighthawk Router,Routers,WiFi Router,Device,Product,High-speed dual-band wireless router,https://www.netgear.com/home/wifi/routers/
-dell_xps_15,objects/dell_xps_15.jpg,Dell XPS 15,Computers,Computers,Device,Product,Powerful laptop with 15-inch display,https://www.dell.com/en-in/shop/dell-laptops/xps-15-laptop/spd/xps-15-9530-laptop
-zigbee_touch_switch,objects/zigbee_touch_switch.jpg,Zigbee Touch Switch,Switches,Touch Switch,Device,Product,Zigbee-enabled smart touch switch,https://example.com/zigbee-touch-switch
-zigbee_motion_sensor,objects/zigbee_motion_sensor.jpg,Zigbee Motion Sensor,Sensors,Motion Sensor,Sensor,Product,Smart sensor detecting motion events,https://example.com/zigbee-motion-sensor
-ceiling_fan_modern,objects/ceiling_fan_modern.jpg,Modern Ceiling Fan,Fans,Ceiling Fan,Appliance,Product,Remote-controlled modern ceiling fan,https://example.com/modern-ceiling-fan
-samsung_tab_s8,objects/samsung_tab_s8.jpg,Samsung Galaxy Tab S8,Displays,Tablet,Device,Product,High-end Android tablet for productivity,https://www.samsung.com/in/tablets/galaxy-tab-s8/
-led_tubelight_18w,objects/led_tubelight_18w.jpg,18W LED Tubelight,Lights,Tubelights,Light,Product,Energy-saving LED tubelight,https://example.com/led-tubelight
-ring_doorbell,objects/ring_doorbell.jpg,Ring Video Doorbell,Cameras,Doorbell,Camera,Product,Smart doorbell with video and motion detection,https://ring.com/
-smart_kettle_1l,objects/smart_kettle_1l.jpg,Smart Kettle 1L,Appliances,Kettle,Appliance,Product,WiFi-enabled electric kettle with scheduling,https://example.com/smart-kettle
+objectid,filename,title,collection,subject,format,type,description,link
+iphone_14,iphone_14.jpg,Apple iPhone 14,Phones,Smartphones,Device,Product,Latest Apple smartphone with A15 chip,https://www.apple.com/in/iphone-14/
+netgear_nighthawk,netgear_nighthawk.jpg,Netgear Nighthawk Router,Routers,WiFi Router,Device,Product,High-speed dual-band wireless router,https://www.netgear.com/home/wifi/routers/
+dell_xps_15,dell_xps_15.jpg,Dell XPS 15,Computers,Computers,Device,Product,Powerful laptop with 15-inch display,https://www.dell.com/en-in/shop/dell-laptops/xps-15-laptop/spd/xps-15-9530-laptop
+zigbee_touch_switch,zigbee_touch_switch.jpg,Zigbee Touch Switch,Switches,Touch Switch,Device,Product,Zigbee-enabled smart touch switch,https://example.com/zigbee-touch-switch
+zigbee_motion_sensor,zigbee_motion_sensor.jpg,Zigbee Motion Sensor,Sensors,Motion Sensor,Sensor,Product,Smart sensor detecting motion events,https://example.com/zigbee-motion-sensor
+ceiling_fan_modern,ceiling_fan_modern.jpg,Modern Ceiling Fan,Fans,Ceiling Fan,Appliance,Product,Remote-controlled modern ceiling fan,https://example.com/modern-ceiling-fan
+samsung_tab_s8,samsung_tab_s8.jpg,Samsung Galaxy Tab S8,Displays,Tablet,Device,Product,High-end Android tablet for productivity,https://www.samsung.com/in/tablets/galaxy-tab-s8/
+led_tubelight_18w,led_tubelight_18w.jpg,18W LED Tubelight,Lights,Tubelights,Light,Product,Energy-saving LED tubelight,https://example.com/led-tubelight
+ring_doorbell,ring_doorbell.jpg,Ring Video Doorbell,Cameras,Doorbell,Camera,Product,Smart doorbell with video and motion detection,https://ring.com/
+smart_kettle_1l,smart_kettle_1l.jpg,Smart Kettle 1L,Appliances,Kettle,Appliance,Product,WiFi-enabled electric kettle with scheduling,https://example.com/smart-kettle
+
