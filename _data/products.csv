@@ -1,4 +1,4 @@
-objectid,filename,title,collection,subject,format,type,description,link
+objectid,object_location,title,collection,subject,format,type,description,link
 iphone_14,objects/iphone_14.jpg,Apple iPhone 14,Phones,Smartphones,Device,Product,Latest Apple smartphone with A15 chip,https://www.apple.com/in/iphone-14/
 netgear_nighthawk,objects/netgear_nighthawk.jpg,Netgear Nighthawk Router,Routers,WiFi Router,Device,Product,High-speed dual-band wireless router,https://www.netgear.com/home/wifi/routers/
 dell_xps_15,objects/dell_xps_15.jpg,Dell XPS 15,Computers,Computers,Device,Product,Powerful laptop with 15-inch display,https://www.dell.com/en-in/shop/dell-laptops/xps-15-laptop/spd/xps-15-9530-laptop
