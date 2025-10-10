@@ -31,3 +31,21 @@ $theme-colors: map-merge(
 {% endif %}
 
 @import "base", "pages", "custom";
+
+.card > a {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card img.card-img,
+.card img.card-img-top {
+  height: 10rem;
+  width: auto;
+  object-fit: contain;
+}
+
+.spotlight.gallery-img {
+  display: block;
+  padding: 0;
+}
