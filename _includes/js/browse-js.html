@@ -54,22 +54,34 @@ function makeCard(obj) {
         card += '<p><a href="' + itemHref + '"><img class="lazyload w-50" data-src="' + thumbSrc + '" alt="Image of ' + obj.title + '"></a></p>';
     }
     // other fields
-    card += '<p class="card-text">';
-    
-    // Tags logic (added random color handling)
     var colors = ['bg-primary', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info']; // Array of possible tag colors
-    if (obj.tags) {
-        var tags = obj.tags.split(";");
-        for (var i = 0; i < tags.length; i++) {
-            var tag = tags[i].trim();
-            if (tag) {
-                var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Pick a random color for each tag
-                card += '<a class="btn btn-sm ' + randomColor + ' m-1 text-wrap" href="' + itemHref + '#' + encodeURIComponent(tag) + '">' + tag + '</a>';
-            }
-        }
-    }
+card += '<p class="card-text">';
 
-    card += '</p>';
+{% for f in fields %}
+  {% unless f.hidden == 'true' %}
+    if (obj[{{ f.field | jsonify }}]) {
+      {% if f.display_name %}
+        card += '<strong>{{ f.display_name }}:</strong> ';
+      {% endif %}
+
+      {% if f.btn == 'true' %}
+        var btns = obj[{{ f.field | jsonify }}].split(";");
+        for (var i = 0, len = btns.length; i < len; i++) {
+          if (btns[i].trim() != "") {
+            var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Randomly select color
+            card += '<a class="btn btn-sm ' + randomColor + ' m-1 text-wrap" href="{{ page.url | relative_url }}#' + encodeURIComponent(btns[i].trim()) + '">' + btns[i].trim() + '</a>';
+          }
+        }
+      {% else %}
+        card += obj[{{ f.field | jsonify }}];
+      {% endif %}
+      {% unless forloop.last %}card += '<br>';{% endunless %}
+    }
+  {% endunless %}
+{% endfor %}
+
+card += '</p>';
+
     // media type
     if(obj.format != "") {
         card += '<p class="card-text"><small><a class="btn btn-sm btn-outline-secondary" href="{{ page.url | relative_url }}#' + encodeURIComponent(obj.format) + '">' + 
