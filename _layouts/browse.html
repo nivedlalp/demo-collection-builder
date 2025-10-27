@@ -54,7 +54,7 @@ custom-foot: js/browse-js.html
             <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse{% if include.open == true %} show{% endif %}" aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#accordionBrowse">
               <div class="accordion-body">
                 {% for product in group.items %}
-                  <a href="/demo-collection-builder/item.html?id={{ product.identifier }}" class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>
+                  <a href="/item.html?id={{ product.identifier }}" class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>
                 {% endfor %}
               </div>
             </div>
@@ -72,7 +72,7 @@ custom-foot: js/browse-js.html
               <div class="card-body">
                 <h5 class="card-title">{{ product.title }}</h5>
                 <p class="card-text">{{ product.description | truncatewords: 20 }}</p>
-                <a href="/demo-collection-builder/item.html?id={{ product.identifier }}" class="btn btn-primary">View Product</a>
+                <a href="/item.html?id={{ product.identifier }}" class="btn btn-primary">View Product</a>
               </div>
             </div>
           </div>
