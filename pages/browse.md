@@ -30,7 +30,7 @@ Explore all hardware products below. Use the search bar or click categories to f
         <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse{% if include.open == true %} show{% endif %}" aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#accordionBrowse">
           <div class="accordion-body">
             {% for product in group.items %}
-              <a href="/demo-collection-builder/item.html?id={{ product.source }}" class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>
+              <a href="/demo-collection-builder/item.html?id={{ product.identifier }}" class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>
             {% endfor %}
           </div>
         </div>
