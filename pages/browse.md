@@ -12,29 +12,49 @@ Explore all hardware products below. Use the search bar or click categories to f
 
 {% assign products = site.data.products %}
 
-<div class="col-md-3">
-  <div class="accordion mb-3" id="accordionBrowse">
-    {% assign grouped_products = products | group_by: "subject" %}
-    {% for group in grouped_products %}
-      <div class="accordion-item">
-        <{{ include.heading_level | default: 'h2' | strip }} class="accordion-header" id="heading{{ forloop.index }}">
-          <button class="accordion-button{% unless include.open %} collapsed{% endunless %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.index }}" aria-expanded="{% if include.open == true %}true{% else %}false{% endif %}" aria-controls="collapse{{ forloop.index }}">
-            <a href="#" style="text-decoration: none; color: inherit;">
-              {% assign subjects = group.name | split: ';' %}
-              {% for subject in subjects %}
-                <span class="badge bg-primary m-1">{{ subject }}</span>
-              {% endfor %}
-            </a>
-          </button>
-        </{{ include.heading_level | default: 'h2' | strip }}>
-        <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse{% if include.open == true %} show{% endif %}" aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#accordionBrowse">
-          <div class="accordion-body">
-            {% for product in group.items %}
-              <a href="/demo-collection-builder/item.html?id={{ product.identifier }}" class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>
-            {% endfor %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="accordion mb-3" id="accordionBrowse">
+        {% assign grouped_products = products | group_by: "subject" %}
+        {% for group in grouped_products %}
+          <div class="accordion-item">
+            <{{ include.heading_level | default: 'h2' | strip }} class="accordion-header" id="heading{{ forloop.index }}">
+              <button class="accordion-button{% unless include.open %} collapsed{% endunless %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.index }}" aria-expanded="{% if include.open == true %}true{% else %}false{% endif %}" aria-controls="collapse{{ forloop.index }}">
+                <a href="#" style="text-decoration: none; color: inherit;">
+                  {% assign subjects = group.name | split: ';' %}
+                  {% for subject in subjects %}
+                    <span class="badge bg-primary m-1">{{ subject }}</span>
+                  {% endfor %}
+                </a>
+              </button>
+            </{{ include.heading_level | default: 'h2' | strip }}>
+            <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse{% if include.open == true %} show{% endif %}" aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#accordionBrowse">
+              <div class="accordion-body">
+                {% for product in group.items %}
+                  <a href="/demo-collection-builder/item.html?id={{ product.identifier }}" class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
           </div>
-        </div>
+        {% endfor %}
       </div>
-    {% endfor %}
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        {% for product in products %}
+          <div class="col-md-4">
+            <div class="card mb-3">
+              <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.title }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ product.title }}</h5>
+                <p class="card-text">{{ product.description | truncatewords: 20 }}</p>
+                <a href="/demo-collection-builder/item.html?id={{ product.identifier }}" class="btn btn-primary">View Product</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </div>
