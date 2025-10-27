@@ -71,7 +71,16 @@ custom-foot: js/browse-js.html
               <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.title }}">
               <div class="card-body">
                 <h5 class="card-title">{{ product.title }}</h5>
-                <p class="card-text">{{ product.description | truncatewords: 20 }}</p>
+                <p class="card-text">
+                  {% if product.tags %}
+                    {% assign tags = product.tags | split: ';' %}
+                    {% assign colors = "bg-primary,bg-success,bg-danger,bg-warning,bg-info" | split: ',' %}
+                    {% for tag in tags %}
+                      {% assign random_color = colors | sample %}
+                      <a class="btn btn-sm {{ random_color }} m-1 text-wrap" href="{{ page.url | relative_url }}#{{ tag | url_encode }}">{{ tag }}</a>
+                    {% endfor %}
+                  {% endif %}
+                </p>
                 <a href="/demo-collection-builder/item.html?id={{ product.identifier }}" class="btn btn-primary">View Product</a>
               </div>
             </div>
