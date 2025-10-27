@@ -55,22 +55,20 @@ function makeCard(obj) {
     }
     // other fields
     card += '<p class="card-text">';
-    {% for f in fields %}{% unless f.hidden == 'true' %}
-    if(obj[{{ f.field | jsonify }}]){
-    {% if f.display_name %}card += '<strong>{{ f.display_name }}:</strong> ';{% endif %}
-    {% if f.btn == 'true' %}
-    var btns = obj[{{ f.field | jsonify }}].split(";");
-    for (var i = 0, len = btns.length; i < len; i++) {
-      if(btns[i] != "") {
-        card += '<a class="btn btn-sm btn-secondary m-1 text-wrap" href="{{ page.url | relative_url }}#' + encodeURIComponent(btns[i].trim()) + '">' + btns[i].trim() + '</a>';
-      }
+    
+    // Tags logic (added random color handling)
+    var colors = ['bg-primary', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info']; // Array of possible tag colors
+    if (obj.tags) {
+        var tags = obj.tags.split(";");
+        for (var i = 0; i < tags.length; i++) {
+            var tag = tags[i].trim();
+            if (tag) {
+                var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Pick a random color for each tag
+                card += '<a class="btn btn-sm ' + randomColor + ' m-1 text-wrap" href="' + itemHref + '#' + encodeURIComponent(tag) + '">' + tag + '</a>';
+            }
+        }
     }
-    {% else %}
-    card += obj[{{ f.field | jsonify }}];
-    {% endif %}
-    {% unless forloop.last %}card += '<br>';{% endunless %}
-    }
-    {% endunless %}{% endfor %}
+
     card += '</p>';
     // media type
     if(obj.format != "") {
