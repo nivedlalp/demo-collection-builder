@@ -54,33 +54,47 @@ function makeCard(obj) {
         card += '<p><a href="' + itemHref + '"><img class="lazyload w-50" data-src="' + thumbSrc + '" alt="Image of ' + obj.title + '"></a></p>';
     }
     // other fields
-    var colors = ['bg-primary', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info']; // Array of possible tag colors
-card += '<p class="card-text">';
+    var colors = [
+                  'rgba(0, 123, 255, 0.75)',  // Blue
+                  'rgba(40, 167, 69, 0.75)',   // Green
+                  'rgba(220, 53, 69, 0.75)',   // Red
+                  'rgba(255, 193, 7, 0.75)',   // Yellow
+                  'rgba(23, 162, 184, 0.75)',  // Teal
+                  'rgba(108, 117, 125, 0.75)', // Gray
+                  'rgba(255, 87, 34, 0.75)',   // Orange
+                  'rgba(156, 39, 176, 0.75)',  // Purple
+                  'rgba(33, 150, 243, 0.75)',  // Light Blue
+                  'rgba(76, 175, 80, 0.75)',   // Light Green
+                  'rgba(255, 235, 59, 0.75)',  // Amber
+                  'rgba(0, 188, 212, 0.75)'    // Cyan
+                ]; 
 
-{% for f in fields %}
-  {% unless f.hidden == 'true' %}
-    if (obj[{{ f.field | jsonify }}]) {
-      {% if f.display_name %}
-        card += '<strong>{{ f.display_name }}:</strong> ';
-      {% endif %}
-
-      {% if f.btn == 'true' %}
-        var btns = obj[{{ f.field | jsonify }}].split(";");
-        for (var i = 0, len = btns.length; i < len; i++) {
-          if (btns[i].trim() != "") {
-            var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Randomly select color
-            card += '<a class="btn btn-sm ' + randomColor + ' m-1 text-wrap" href="{{ page.url | relative_url }}#' + encodeURIComponent(btns[i].trim()) + '">' + btns[i].trim() + '</a>';
-          }
+    card += '<p class="card-text">';
+    
+    {% for f in fields %}
+      {% unless f.hidden == 'true' %}
+        if (obj[{{ f.field | jsonify }}]) {
+          {% if f.display_name %}
+            card += '<strong>{{ f.display_name }}:</strong> ';
+          {% endif %}
+    
+          {% if f.btn == 'true' %}
+            var btns = obj[{{ f.field | jsonify }}].split(";");
+            for (var i = 0, len = btns.length; i < len; i++) {
+              if (btns[i].trim() != "") {
+                var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Randomly select color
+                card += '<a class="btn btn-sm ' + randomColor + ' m-1 text-wrap" href="{{ page.url | relative_url }}#' + encodeURIComponent(btns[i].trim()) + '">' + btns[i].trim() + '</a>';
+              }
+            }
+          {% else %}
+            card += obj[{{ f.field | jsonify }}];
+          {% endif %}
+          {% unless forloop.last %}card += '<br>';{% endunless %}
         }
-      {% else %}
-        card += obj[{{ f.field | jsonify }}];
-      {% endif %}
-      {% unless forloop.last %}card += '<br>';{% endunless %}
-    }
-  {% endunless %}
-{% endfor %}
-
-card += '</p>';
+      {% endunless %}
+    {% endfor %}
+    
+    card += '</p>';
 
     // media type
     if(obj.format != "") {
