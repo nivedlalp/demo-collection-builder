@@ -20,14 +20,17 @@ Explore all hardware products below. Use the search bar or click categories to f
         <{{ include.heading_level | default: 'h2' | strip }} class="accordion-header" id="heading{{ forloop.index }}">
           <button class="accordion-button{% unless include.open %} collapsed{% endunless %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.index }}" aria-expanded="{% if include.open == true %}true{% else %}false{% endif %}" aria-controls="collapse{{ forloop.index }}">
             <a href="#" style="text-decoration: none; color: inherit;">
-              {{ group.name }} 
+              {% assign subjects = group.name | split: ';' %}
+              {% for subject in subjects %}
+                <span class="badge bg-primary m-1">{{ subject }}</span>
+              {% endfor %}
             </a>
           </button>
         </{{ include.heading_level | default: 'h2' | strip }}>
         <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse{% if include.open == true %} show{% endif %}" aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#accordionBrowse">
           <div class="accordion-body">
             {% for product in group.items %}
-              <a href="/demo-collection-builder/item.html?id={{ product.url }}" class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>  
+              <a href="/demo-collection-builder/item.html?id={{ product.source }}" class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>
             {% endfor %}
           </div>
         </div>
