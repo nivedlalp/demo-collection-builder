@@ -83,7 +83,7 @@ function makeCard(obj) {
             for (var i = 0, len = btns.length; i < len; i++) {
               if (btns[i].trim() != "") {
                 var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Randomly select color
-                card += '<a class="btn btn-sm ' + randomColor + ' m-1 text-wrap" href="{{ page.url | relative_url }}#' + encodeURIComponent(btns[i].trim()) + '">' + btns[i].trim() + '</a>';
+                card += '<a class="btn btn-sm m-1 text-wrap" style="background-color:' + randomColor + '" href="{{ page.url | relative_url }}#' + encodeURIComponent(btns[i].trim()) + '">' + btns[i].trim() + '</a>';
               }
             }
           {% else %}
