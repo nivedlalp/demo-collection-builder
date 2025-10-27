@@ -1,27 +1,22 @@
----
-title: About
-layout: about
-permalink: /about.html
-# include CollectionBuilder info at bottom
-credits: true
-# Edit the markdown on in this file to describe your collection
-# Look in _includes/feature for options to easily add features to the page
----
+# Product Overview
 
-{% include feature/jumbotron.html objectid="https://cdil.lib.uidaho.edu/images/palouse_sm.jpg" %}
+## Our Featured Products
 
-{% include feature/nav-menu.html sections="About the Collection;About the About Page" %}
+{% assign products = site.data.products %}  
 
-## About the Collection
-
-This is a demo collection to practice using CB-GH. I hope to learn how:
-
-- To use markdown
-- To use github web UI
-
-The template repository features four objects from the University of Idaho Library's [Digital Collections](https://www.lib.uidaho.edu/digital). 
-
-For full details of creating your own collection site, visit [CollectionBuilder Documentation](https://collectionbuilder.github.io/cb-docs/)!
-
-<!-- IMPORTANT!!! DELETE this comment and the include below when you are finished editing this page for your collection. The include below introduces about page features. They will show up on your collection's about page until you delete it.  -->
-{% include cb/about_the_about.md %} 
+<div class="accordion mb-3" id="accordionInclude">
+  {% for product in products %}
+    <div class="accordion-item">
+      <{{ include.heading_level | default: 'h2' | strip }} class="accordion-header" id="heading{{ forloop.index }}">
+        <button class="accordion-button{% unless include.open %} collapsed{% endunless %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.index }}" aria-expanded="{% if include.open == true %}true{% else %}false{% endif %}" aria-controls="collapse{{ forloop.index }}">
+            {{ product.title }}  
+        </button>
+      </{{ include.heading_level | default: 'h2' | strip }}>
+      <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse{% if include.open == true %} show{% endif %}" aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#accordionInclude">
+        <div class="accordion-body">
+            {{ product.description | markdownify }}  
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
