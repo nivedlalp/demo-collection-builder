@@ -40,21 +40,5 @@ Explore all hardware products below. Use the search bar or click categories to f
         {% endfor %}
       </div>
     </div>
-    <div class="col-md-9">
-      <div class="row">
-        {% for product in products %}
-          <div class="col-md-4">
-            <div class="card mb-3">
-              <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.title }}">
-              <div class="card-body">
-                <h5 class="card-title">{{ product.title }}</h5>
-                <p class="card-text">{{ product.description | truncatewords: 20 }}</p>
-                <a href="/demo-collection-builder/item.html?id={{ product.identifier }}" class="btn btn-primary">View Product</a>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
   </div>
 </div>
