@@ -50,8 +50,8 @@ nav:
   - title: "About"
     url: /about/
 
-url: "https://nivedlalp.github.io"
-baseurl: "/demo-collection-builder"
+url: "https://liberatedhardware.org"
+baseurl: "/"
 permalink: pretty
 ##########
 # Site/Organization Branding 
