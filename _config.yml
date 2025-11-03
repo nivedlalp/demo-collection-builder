@@ -20,9 +20,9 @@ source-code: https://github.com/CollectionBuilder/collectionbuilder-gh
 # SITE SETTINGS
 #
 # title of site appears in banner
-title: Hardware Product Catalog
-tagline: A digital product catalog built with CollectionBuilder
-description: "Demo hardware catalog showcasing products by category using CollectionBuilder for Jekyll."
+title: Liberated Hardware
+tagline: A unique shop for products that respect your freedom to learn, hack, extend and do things yourself.
+description: "Explore a showcase of open, hackable, and DIY-friendly hardware. This catalog highlights products that put learning, modification, and user freedom first."
 author: nived
 
 ##########
