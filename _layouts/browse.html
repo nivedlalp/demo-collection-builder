@@ -13,14 +13,16 @@ custom-foot: js/browse-js.html
         <div class="input-group input-group-lg">
           <input type="text" class="form-control" id="filterTextBox" placeholder="Filter ... " aria-label="Search">
           <button class="btn btn-success" type="submit" title="Filter items" id="filterButton">Search</button>
-          <button class="btn btn-outline-secondary filter" onclick="resetFilter(); return false;" data-filter="">Reset</button>
+          <button class="btn btn-outline-secondary filter" onclick="resetFilter(); return false;"
+            data-filter="">Reset</button>
         </div>
       </form>
     </div>
 
     <div class="col-md-2">
       <div class="dropdown h-100">
-        <button class="btn btn-secondary h-100 dropdown-toggle w-100" type="button" id="browseSortButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-secondary h-100 dropdown-toggle w-100" type="button" id="browseSortButton"
+          data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sort by <span id="sortFilter">Random</span>
         </button>
         <div class="dropdown-menu browse-sort-menu" aria-labelledby="browseSortButton">
@@ -28,7 +30,7 @@ custom-foot: js/browse-js.html
           <button class="dropdown-item browse-sort-item" data-filter="title">Title</button>
           {% assign sort_options = site.data.config-browse | where_exp: 'i','i.sort_name != nil' %}
           {% for o in sort_options %}
-            <button class="dropdown-item browse-sort-item" data-filter="{{ o.field | escape }}">{{ o.sort_name }}</button>
+          <button class="dropdown-item browse-sort-item" data-filter="{{ o.field | escape }}">{{ o.sort_name }}</button>
           {% endfor %}
         </div>
       </div>
@@ -40,25 +42,31 @@ custom-foot: js/browse-js.html
       <div class="accordion mb-3" id="accordionBrowse">
         {% assign grouped_products = site.data.products | group_by: "subject" %}
         {% for group in grouped_products %}
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="heading{{ forloop.index }}">
-              <button class="accordion-button{% unless include.open %} collapsed{% endunless %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.index }}" aria-expanded="{% if include.open == true %}true{% else %}false{% endif %}" aria-controls="collapse{{ forloop.index }}">
-                <a href="#" style="text-decoration: none; color: inherit;">
-                  {% assign subjects = group.name | split: ';' %}
-                  {% for subject in subjects %}
-                    <span class="badge bg-secondary m-1">{{ subject }}</span>
-                  {% endfor %}
-                </a>
-              </button>
-            </h2>
-            <div id="collapse{{ forloop.index }}" class="accordion-collapse collapse{% if include.open == true %} show{% endif %}" aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#accordionBrowse">
-              <div class="accordion-body">
-                {% for product in group.items %}
-                  <a href="/item.html?id={{ product.identifier }}" class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading{{ forloop.index }}">
+            <button class="accordion-button{% unless include.open %} collapsed{% endunless %}" type="button"
+              data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.index }}"
+              aria-expanded="{% if include.open == true %}true{% else %}false{% endif %}"
+              aria-controls="collapse{{ forloop.index }}">
+              <a href="#" style="text-decoration: none; color: inherit;">
+                {% assign subjects = group.name | split: ';' %}
+                {% for subject in subjects %}
+                <span class="badge bg-secondary m-1">{{ subject }}</span>
                 {% endfor %}
-              </div>
+              </a>
+            </button>
+          </h2>
+          <div id="collapse{{ forloop.index }}"
+            class="accordion-collapse collapse{% if include.open == true %} show{% endif %}"
+            aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#accordionBrowse">
+            <div class="accordion-body">
+              {% for product in group.items %}
+              <a href="{{ site.url }}{{ '/item.html' | relative_url }}?id={{ product.identifier }}"
+                class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>
+              {% endfor %}
             </div>
           </div>
+        </div>
         {% endfor %}
       </div>
     </div>
@@ -66,16 +74,16 @@ custom-foot: js/browse-js.html
     <div class="col-md-9">
       <div class="row" id="browseItems">
         {% for product in site.data.products %}
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.title }}">
-              <div class="card-body">
-                <h5 class="card-title">{{ product.title }}</h5>
-                <p class="card-text">{{ product.description | truncatewords: 20 }}</p>
-                <a href="/item.html?id={{ product.identifier }}" class="btn btn-primary">View Product</a>
-              </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.title }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.title }}</h5>
+              <p class="card-text">{{ product.description | truncatewords: 20 }}</p>
+              <a href="/item.html?id={{ product.identifier }}" class="btn btn-primary">View Product</a>
             </div>
           </div>
+        </div>
         {% endfor %}
       </div>
     </div>
@@ -87,4 +95,3 @@ custom-foot: js/browse-js.html
 <div id="loadingIcon" class="text-center">
   <div class="spinner-border text-dark" role="status"><span class="visually-hidden">Loading...</span></div>
 </div>
-
