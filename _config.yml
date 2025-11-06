@@ -44,7 +44,7 @@ display_fields: ["title", "collection", "subject", "format", "description"]
 
 nav:
   - title: "Home"
-    url: /browse/
+    url: /
   - title: "About"
     url: /about/
 
