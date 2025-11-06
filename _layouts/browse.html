@@ -61,8 +61,7 @@ custom-foot: js/browse-js.html
             aria-labelledby="heading{{ forloop.index }}" data-bs-parent="#accordionBrowse">
             <div class="accordion-body">
               {% for product in group.items %}
-              <a href="{{ site.url }}{{ '/item.html' | relative_url }}?id={{ product.identifier }}"
-                class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>
+                <a href="{{ '/item.html' | relative_url }}?id={{ product.identifier }}" class="btn btn-outline-dark btn-sm m-1">{{ product.title }}</a>
               {% endfor %}
             </div>
           </div>
